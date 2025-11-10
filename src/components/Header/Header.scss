@@ -1,0 +1,19 @@
+.header {
+  padding-top: 12px;
+  background-color: rgb(107, 107, 107);
+  width: 100%;
+
+  position: relative;
+
+  height: calc(100vh - var(--promo-bar-height, 0px));
+
+  &__content {
+    height: auto;
+    width: 550px;
+
+    position: absolute;
+
+    top: 25rem;
+    left: 6rem;
+  }
+}

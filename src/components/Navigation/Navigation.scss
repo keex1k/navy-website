@@ -1,0 +1,25 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+
+    gap: 72px;
+  }
+
+  &__element {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__logo {
+    max-width: 150px;
+    max-height: 50px;
+    height: auto;
+    width: auto;
+  }
+}

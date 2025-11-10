@@ -1,0 +1,29 @@
+.promo-bar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    background-color: black;
+
+    &__paragraph {
+        margin: 4px 0;
+    }
+
+    &__button {
+        all: unset;
+        cursor: pointer;
+
+        height: 16px;
+        width: 16px;
+
+        font-size: 12px;
+        text-align: center;
+        line-height: 12px;
+
+        position: absolute;
+        right: 10px;
+    }
+}

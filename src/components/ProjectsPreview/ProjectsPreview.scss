@@ -1,0 +1,97 @@
+.projects-preview {
+    min-height: 100vh;
+    background-color: white;
+    color: black;
+  
+    &__nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+    }
+  
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+  
+    &__buttons {
+      display: flex;
+      gap: 0.5rem;
+  
+      button {
+        all: unset;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+  
+        &:hover {
+          opacity: 1;
+        }
+  
+        img {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  
+    /* --- KARUZELA --- */
+    .projects-preview__carousel {
+        overflow: hidden;
+        width: 100%;
+      }
+      
+      .projects-preview__track {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      
+      .projects-preview__item {
+        flex: 0 0 25%; // dokładnie 4 elementy na desktopie
+        text-align: center;
+        box-sizing: border-box;
+        padding: 0 0.5rem; // mały padding wewnętrzny, nie gap
+      
+        img {
+          width: 100%;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+      
+        p {
+          margin-top: 0.5rem;
+          font-size: 0.9rem;
+          opacity: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: opacity 0.3s, max-height 0.3s;
+        }
+      
+        &:hover p {
+          opacity: 1;
+          max-height: 200px;
+        }
+      }
+      
+      @media (max-width: 1024px) {
+        .projects-preview__item {
+          flex: 0 0 50%; // 2 elementy w wierszu
+        }
+      }
+      
+      @media (max-width: 600px) {
+        .projects-preview__item {
+          flex: 0 0 100%; // 1 element
+        }
+      }   
+  }
+  
