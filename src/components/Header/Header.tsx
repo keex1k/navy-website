@@ -6,6 +6,7 @@ export const Header: React.FC = () => {
         <div className="header">
             <Navigation />
             <div className='header__content'>   
+                _
                 <p className='header__title'>
                     NAVY - WIĘCEJ NIŻ PROJEKT
                 </p>

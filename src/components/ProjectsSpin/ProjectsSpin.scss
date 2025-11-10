@@ -1,0 +1,29 @@
+.projects-spin {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+  
+    &__track {
+      display: flex;
+      height: 100%;
+    }
+  
+    &__item {
+      flex: 0 0 50%; // dwa zdjęcia obok siebie
+      height: 100%;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  // RESPONSYWNOŚĆ
+  @media (max-width: 1024px) {
+    .projects-spin__item {
+      flex: 0 0 100%; // jedno zdjęcie w rzędzie
+    }
+  }
+  

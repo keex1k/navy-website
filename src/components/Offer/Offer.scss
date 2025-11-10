@@ -1,0 +1,31 @@
+.offer {
+    min-height: 100vh;
+    background-color: white;
+    color: black;  
+    
+    &__nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+  
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    &__image {
+        background-color: rgb(107, 107, 107);
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        box-sizing: border-box;
+        color: white;
+
+        padding: 5rem 3rem;
+    }
+}
