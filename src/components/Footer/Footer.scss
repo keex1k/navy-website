@@ -1,9 +1,109 @@
 .footer {
-    height: 350px;
-    background-color: black;
+  height: 250px;
+  background-color: black;
+  position: relative;
+  padding-top: 2rem;
+  box-sizing: border-box;
+
+  display: flex;
+
+  &__logo {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+
+    max-width: 150px;
+    max-height: 50px;
+    height: auto;
+    width: auto;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 50%;
+    margin: 0;
+    padding-left: 3rem;
+  }
+
+  &__element {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: gray;
+      }
+    }
+  }
+
+  &__form {
+    padding-left: 3rem;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-right: 3rem;
+
+    p {
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+  }
+
+  &__input-box {
+    display: flex;
+    align-items: center; // wyrównanie pionowe
+    gap: 1rem; // odstęp między inputem a przyciskiem
+    position: relative;
+    width: 100%;
+  }
+
+  &__input {
+    all: unset;
+    flex: 1; // żeby zajmował całe dostępne miejsce
+    color: white;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+  }
+
+  &__button {
+    all: unset;
+    padding: 8px 16px;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
 }
 
 .white-bar {
-    background-color: white;
-    height: 50px
+  background-color: white;
+  color: black;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 5px;
 }
