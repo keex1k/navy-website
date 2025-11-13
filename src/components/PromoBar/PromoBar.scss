@@ -1,29 +1,46 @@
 .promo-bar {
-    position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-between; // ✅ zamiast center
     align-items: center;
-    padding: 0;
-
-    background-color: black;
-
+  
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  
+    transition: all 0.3s ease;
+  
     &__paragraph {
-        margin: 4px 0;
+      flex: 1;
+      text-align: center;
+      margin: 0;
+      font-size: 0.9rem;
+  
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
     }
-
+  
     &__button {
-        all: unset;
-        cursor: pointer;
-
-        height: 16px;
-        width: 16px;
-
-        font-size: 12px;
-        text-align: center;
-        line-height: 12px;
-
-        position: absolute;
-        right: 10px;
+      all: unset;
+      cursor: pointer;
+      color: #fff;
+      font-size: 0.9rem;
+      line-height: 1;
+      box-sizing: border-box;
+  
+      transition: color 0.2s ease;
+  
+      &:hover {
+        color: #ccc;
+      }
+  
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
     }
-}
+  }
+  

@@ -2,14 +2,18 @@ import "./Offer.scss";
 
 export const Offer: React.FC = () => {
   return (
-    <div className="offer">
+    <section className="offer" id="offer">
       <div className="offer__nav">
-        <p className="offer__title">OFERTA</p>
+        <h2 className="offer__title">OFERTA</h2>
       </div>
+
       <div className="offer__image">
-        _
-        <p> KILKANAŚCIE LAT DOŚWIADCZENIA I SETKI ZADOWOLONYCH KLIENTÓW</p>
+        <span className="offer__decor">_</span>
+        <p className="offer__text">
+          KILKANAŚCIE LAT DOŚWIADCZENIA<br />
+          I SETKI ZADOWOLONYCH KLIENTÓW
+        </p>
       </div>
-    </div>
+    </section>
   );
 };

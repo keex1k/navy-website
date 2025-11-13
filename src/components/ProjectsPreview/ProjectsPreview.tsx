@@ -2,7 +2,7 @@ import "./ProjectsPreview.scss";
 import next from "../../assets/icons/next-svgrepo-com.svg";
 import prev from "../../assets/icons/previous-svgrepo-com.svg";
 import project from "../../assets/icons/project-presentation-svgrepo-com.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const ProjectsPreview: React.FC = () => {
   const projects = [
@@ -16,8 +16,20 @@ export const ProjectsPreview: React.FC = () => {
     { id: 8, img: project, title: "Projekt 8" },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const visibleCount = 4;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(4);
+
+  // 🧠 Dynamiczne dopasowanie ilości widocznych projektów do szerokości okna
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 600) setVisibleCount(1);
+      else if (window.innerWidth < 1024) setVisibleCount(2);
+      else setVisibleCount(4);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleNext = () => {
     if (currentIndex < projects.length - visibleCount) {
@@ -32,14 +44,22 @@ export const ProjectsPreview: React.FC = () => {
   };
 
   return (
-    <div className="projects-preview">
+    <section className="projects-preview" id="projects">
       <div className="projects-preview__nav">
-        <p className="projects-preview__title">PROJEKTY</p>
+        <h2 className="projects-preview__title">PROJEKTY</h2>
         <div className="projects-preview__buttons">
-          <button className="projects-preview__prev" onClick={handlePrev}>
+          <button
+            className="projects-preview__prev"
+            onClick={handlePrev}
+            aria-label="Poprzedni projekt"
+          >
             <img src={prev} alt="Poprzedni" />
           </button>
-          <button className="projects-preview__next" onClick={handleNext}>
+          <button
+            className="projects-preview__next"
+            onClick={handleNext}
+            aria-label="Następny projekt"
+          >
             <img src={next} alt="Następny" />
           </button>
         </div>
@@ -53,17 +73,20 @@ export const ProjectsPreview: React.FC = () => {
           }}
         >
           {projects.map((p) => (
-            <div key={p.id} className="projects-preview__item">
-              <img src={p.img} alt={p.title} />
+            <article key={p.id} className="projects-preview__item">
+              <div className="projects-preview__img-box">
+                <img src={p.img} alt={p.title} />
+              </div>
+              <h3>{p.title}</h3>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s.
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
